@@ -76,8 +76,6 @@ typedef NS_ENUM(NSUInteger, OYLoginformType){
 @property (assign, nonatomic) NSUInteger age;// 年龄
 
 10、头文件的引用：将系统头文件放在前面
-#import <UIKit/UIKit.h>
-#import "MemberVariable.h"
 
 11、定义的变量要使用, 不然会有警告. 不要忽视这样警告.
 
