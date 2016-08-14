@@ -2,9 +2,9 @@
 Object-C代码规范简单介绍。
 
 1、声明类或方法时，注意空格的使用，参数过多时可换行保持对齐。
-- (void)registerWithUserName:(NSString *)userName
-                    passowrd:(NSString *)password
-                        code:(NSString *)code;
+-- (void)registerWithUserName:(NSString *)userName 
+-                   passowrd:(NSString *)password
+-                       code:(NSString *)code;
 
 2、调用方法时也是如此，参数都写在一行或换行冒号对齐，
 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示"
