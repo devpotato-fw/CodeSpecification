@@ -33,7 +33,6 @@ UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示"
 @end
 
 5、建议使用“#pragma mark”，方便阅读代码
-#pragma mark - Register Method
 
 6、不要使用魔术数字命名
 @property (strong, nonatomic) UIButton *oneButton;
