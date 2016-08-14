@@ -22,6 +22,7 @@ UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示"
 
                                                             otherButtonTitles:@"确认", nil];
                                                             
+
 3、命名规则
 
 类名首字母大写，方法首字母小写，方法中的参数首字母小写，同时尽量让方法的命名读起来像一句话，能够传达出方法的意思
@@ -35,6 +36,7 @@ UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示"
 - (void)login;
 
 @end
+
 @interface Delegate : UIViewController
 
 // 写delegate的时候类型应该为weak弱引用，以避免循环引用
@@ -45,12 +47,12 @@ UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示"
 
 6、建议使用“#pragma mark”，方便阅读代码。
 
-#pragma mark - Register Method
 7、不要使用魔术数字命名
 
 @property (strong, nonatomic) UIButton *oneButton;
 
 @property (strong, nonatomic) UIButton *twoButton;
+
 8、属性命名不要使用下划线命名方式， 使用驼峰风格。与系统保持一致
 
 // 错误命名
@@ -60,6 +62,8 @@ UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示"
 // 正确命名
 
 @property (strong, nonatomic) NSString *endTime;
+
+
 9、枚举类型的命名规则和函数的命名规则相同：命名时使用驼峰命名法，勿使用下划线命名法。
 
 typedef NS_ENUM(NSUInteger, LoginformType) {
@@ -75,14 +79,13 @@ typedef NS_ENUM(NSUInteger, LoginformType) {
      LoginformTypeQQ                  = 5,
 
 };
+
 10、一些非负数整形的数据建议用NSUInteger
 
 @property (assign, nonatomic) NSUInteger age;// 年龄
+
 11、头文件的引用：将系统头文件放在前面
 
-##import <UIKit/UIKit.h>
-
-#import "MemberVariable.h"
 12、定义的变量要使用, 不然会有警告. 不要忽视这样警告.
 
 13、关于大括号, 代码块的使用,：
@@ -90,11 +93,13 @@ typedef NS_ENUM(NSUInteger, LoginformType) {
 - 大括号内的对象是有生命周期的, 出了大括号的话, 里面的对象就被释放掉了
 
 - 巧妙的使用大括号, 可以使得代码更清晰整洁
+
 14、三个叹号或者问号可以着重标记, 可以快速查找
 
 // !!!: 宏的使用
 
 // ???: 方法的调用
+
 15、变量命名规则
 
 - 字符串命名后加     Str
@@ -110,6 +115,7 @@ typedef NS_ENUM(NSUInteger, LoginformType) {
 - UIImage后加     Image
 
 - 这时你会发现规律，在变量名后加类型说明符的后缀
+
 16、 除了初始化方法（init、initWithCoder等）、dealloc方法和自定义的 setters 和 getters 内部，应避免直接访问实例变量。
 
 // ---------------------- VC方法规范 ----------------------
@@ -203,6 +209,7 @@ if (!isLogIn) {// 推荐
     // 登录失败
 
 }
+
 18、方法
 
 在方法签名中，在 -/+ 符号后应该有一个空格。方法片段之间也应该有一个空格。
@@ -210,6 +217,7 @@ if (!isLogIn) {// 推荐
 - (void)loginWithUserName:(NSString *)userName passowrd:(NSString *)password;
 
 + (void)loginWithUserName:(NSString *)userName passowrd:(NSString *)password;
+
 19、变量
 
 在MemberVariable.m文件中，声明变量
@@ -224,6 +232,7 @@ if (!isLogIn) {// 推荐
 // 推荐
 
 @property (strong, nonatomic) NSArray *dataList;
+
 20、变量限定符
 
 当涉及到在 ARC 中被引入变量限定符时， 限定符 (__strong, __weak, __unsafe_unretained, __autoreleasing) 应该位于星号和变量名之间，如：NSString * __weak text。
@@ -250,6 +259,7 @@ NSDictionary *productManagers = [NSDictionary dictionaryWithObjectsAndKeys: @"Ka
 NSNumber *shouldUseLiterals = [NSNumber numberWithBool:YES];
 
 NSNumber *buildingZIPCode = [NSNumber numberWithInteger:10018];
+
 22、CGRect 函数
 
 当访问一个 CGRect 的 x， y， width， height 时，应该使用CGGeometry 函数代替直接访问结构体成员。
@@ -274,9 +284,11 @@ CGFloat y2 = frame.origin.y;
 CGFloat width2 = frame.size.width;
 
 CGFloat height2 = frame.size.height;
+
 23、如果一个 BOOL 属性名称是一个形容词，属性可以省略 “is” 前缀，但为 get 访问器指定一个惯用的名字，例如：
 
 @property (assign, getter=isEditable) BOOL editable;
+
 24、单例
 
 单例对象应该使用线程安全的模式创建共享的实例。
@@ -296,6 +308,7 @@ CGFloat height2 = frame.size.height;
      return sharedInstance;
 
 }
-26、Xcode 工程
+
+25、Xcode 工程
 
 为了避免文件杂乱，物理文件应该保持和 Xcode 项目文件同步。Xcode 创建的任何组（group）都必须在文件系统有相应的映射。为了更清晰，代码不仅应该按照类型进行分组，也可以根据功能进行分组。
