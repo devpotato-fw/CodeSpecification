@@ -8,6 +8,8 @@ Object-C代码规范简单介绍。
                               passowrd:(NSString *)password
 
                                      code:(NSString *)code;
+                                     
+
 2、调用方法时也是如此，参数都写在一行或换行冒号对齐，
 
 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示"
@@ -19,6 +21,7 @@ UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示"
                                                             cancelButtonTitle:@"取消"
 
                                                             otherButtonTitles:@"确认", nil];
+                                                            
 3、命名规则
 
 类名首字母大写，方法首字母小写，方法中的参数首字母小写，同时尽量让方法的命名读起来像一句话，能够传达出方法的意思
@@ -39,6 +42,7 @@ UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示"
 @property (weak, nonatomic) id delegate;
 
 @end
+
 6、建议使用“#pragma mark”，方便阅读代码。
 
 #pragma mark - Register Method
